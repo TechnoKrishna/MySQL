@@ -1,0 +1,18 @@
+🤖 LIMIT 🤖
+
+👾 The LIMIT clause is used to specify the number of records to return.
+
+👾 The LIMIT clause is useful on large tables with thousands of records. 
+
+👾 Returning a large number of records can impact performance.
+
+👀 select * from students limit 10;
+
+👾 by using OFFSET. IT LEAVES THE FIRSTS
+
+👀 select * from students limit 10 offset 5;
+
+👾 ADD a WHERE CLAUSE
+
+👀 select * from students where gender = "m" limit 10;
+
