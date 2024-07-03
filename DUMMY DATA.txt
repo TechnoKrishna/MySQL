@@ -1,0 +1,68 @@
+🩻 DUMMY DATA 🩻
+
+STUDENT RECORD
+
+CREATE TABLE students (
+    rollno INT PRIMARY KEY,
+    firstname VARCHAR(50),
+    lastname VARCHAR(50),
+    gender CHAR(1),
+    age INT,
+    major VARCHAR(50),
+    cgpa DECIMAL(3,2)
+);
+
+INSERT INTO students (rollno, firstname, lastname, gender, age, major, cgpa) VALUES
+(1, 'John', 'Doe', 'M', 20, 'Computer Science', 8.5),
+(2, 'Jane', 'Smith', 'F', 21, 'Mathematics', 9.2),
+(3, 'Mike', 'Johnson', 'M', 22, 'Physics', 7.8),
+(4, 'Emily', 'Davis', 'F', 20, 'Chemistry', 8.7),
+(5, 'David', 'Wilson', 'M', 21, 'Biology', 9.0),
+(6, 'Sarah', 'Moore', 'F', 22, 'Economics', 8.3),
+(7, 'James', 'Taylor', 'M', 20, 'History', 7.9),
+(8, 'Anna', 'Anderson', 'F', 21, 'English', 9.1),
+(9, 'Robert', 'Thomas', 'M', 22, 'Philosophy', 8.4),
+(10, 'Laura', 'Jackson', 'F', 20, 'Political Science', 8.8),
+(11, 'Daniel', 'White', 'M', 21, 'Sociology', 7.6),
+(12, 'Sophia', 'Harris', 'F', 22, 'Psychology', 9.3),
+(13, 'William', 'Martin', 'M', 20, 'Engineering', 8.6),
+(14, 'Olivia', 'Thompson', 'F', 21, 'Art', 8.2),
+(15, 'Henry', 'Garcia', 'M', 22, 'Music', 7.7),
+(16, 'Isabella', 'Martinez', 'F', 20, 'Theater', 9.0),
+(17, 'Alexander', 'Robinson', 'M', 21, 'Design', 8.1),
+(18, 'Mia', 'Clark', 'F', 22, 'Dance', 8.5),
+(19, 'Samuel', 'Rodriguez', 'M', 20, 'Film Studies', 7.8),
+(20, 'Charlotte', 'Lewis', 'F', 21, 'Journalism', 8.9),
+(21, 'Mason', 'Lee', 'M', 22, 'Marketing', 8.7),
+(22, 'Amelia', 'Walker', 'F', 20, 'Management', 8.4),
+(23, 'Benjamin', 'Hall', 'M', 21, 'Finance', 7.9),
+(24, 'Evelyn', 'Allen', 'F', 22, 'Accounting', 8.2),
+(25, 'Lucas', 'Young', 'M', 20, 'Business', 8.6),
+(26, 'Grace', 'Hernandez', 'F', 21, 'Education', 8.1),
+(27, 'Logan', 'King', 'M', 22, 'Nursing', 8.5),
+(28, 'Chloe', 'Wright', 'F', 20, 'Medicine', 9.3),
+(29, 'Elijah', 'Lopez', 'M', 21, 'Law', 8.7),
+(30, 'Avery', 'Hill', 'F', 22, 'Architecture', 8.4),
+(31, 'Jack', 'Scott', 'M', 20, 'Environmental Science', 7.8),
+(32, 'Lily', 'Green', 'F', 21, 'Geography', 9.0),
+(33, 'Michael', 'Adams', 'M', 22, 'Geology', 8.6),
+(34, 'Ella', 'Baker', 'F', 20, 'Anthropology', 8.3),
+(35, 'Ethan', 'Gonzalez', 'M', 21, 'Linguistics', 8.8),
+(36, 'Sofia', 'Nelson', 'F', 22, 'Literature', 7.9),
+(37, 'Aiden', 'Carter', 'M', 20, 'International Relations', 8.5),
+(38, 'Zoe', 'Mitchell', 'F', 21, 'Public Administration', 9.1),
+(39, 'Noah', 'Perez', 'M', 22, 'Urban Planning', 8.4),
+(40, 'Harper', 'Roberts', 'F', 20, 'Sustainability Studies', 8.7),
+(41, 'Jayden', 'Turner', 'M', 21, 'Forestry', 7.8),
+(42, 'Abigail', 'Phillips', 'F', 22, 'Marine Biology', 9.0),
+(43, 'Sebastian', 'Campbell', 'M', 20, 'Veterinary Medicine', 8.3),
+(44, 'Emily', 'Parker', 'F', 21, 'Astronomy', 8.8),
+(45, 'Jackson', 'Evans', 'M', 22, 'Astrophysics', 7.9),
+(46, 'Scarlett', 'Edwards', 'F', 20, 'Cosmology', 9.2),
+(47, 'Matthew', 'Collins', 'M', 21, 'Space Science', 8.6),
+(48, 'Victoria', 'Stewart', 'F', 22, 'Neuroscience', 8.1),
+(49, 'Joshua', 'Sanchez', 'M', 20, 'Genetics', 8.7),
+(50, 'Madison', 'Morris', 'F', 21, 'Bioinformatics', 8.5);
+
+
+
