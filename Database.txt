@@ -1,0 +1,24 @@
+🤖 DATABASE 🤖
+
+👻 Create Database Query 
+
+👀 create database school;
+
+👻 Drop Database Query
+
+👀 drop database school;
+
+👻 Show All Databases Query
+
+👀 show databases;
+
+👻 To Use Database Query
+
+👀 use school;
+
+👻 Alter Database to Read Only Mode Query
+
+👀 alter database school read only = 1;
+
+
+
