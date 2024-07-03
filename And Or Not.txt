@@ -1,0 +1,28 @@
+🤖 AND OR NOT 🤖
+
+👾 The WHERE clause can be combined with AND, OR, and NOT operators
+
+👾 The AND and OR operators are used to filter records based on more than one condition
+
+👾 The AND operator displays a record if all the conditions separated by AND are TRUE.
+
+👾 The OR operator displays a record if any of the conditions separated by OR is TRUE.
+
+👾 The NOT operator displays a record if the condition(s) is NOT TRUE.
+
+👀 select * from students where age = 21 and cgpa >= 8.5;
+
+👀 select * from students where age = 21 or cgpa >= 9;
+
+👀 select * from students where not gender = "m";
+
+👻 Combining AND, OR and NOT
+
+👀 select * from students where age = 21 and (cgpa = 7.5 or cgpa = 8.5);
+
+👀 select * from students where not gender = "f" and (age=21 and cgpa >= 8.5);
+
+👀 select * from students where not gender = "f" and not cgpa = 8.5;
+
+
+
