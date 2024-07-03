@@ -1,0 +1,7 @@
+$ INSTALLATION OF MYSQL
+
+-> Search MySQL Installer And Download it.
+-> Open Exe
+-> Choose Custom 
+-> And Select Server & Workbench
+-> INSTALL
