@@ -1,0 +1,127 @@
+🤖 SELECT QUERY 🤖
+
+👾 The SELECT statement is used to select data from a database.
+
+👾 The data returned is stored in a result table, called the result-set.
+
+👻 Select All Column
+
+👀 select * from students;
+
+👾 The SELECT DISTINCT statement is used to return only distinct (different) values.
+
+👀 select distinct * from students;
+
+👀 select COUNT(DISTINCT Country) FROM Customers;
+
+👻 Select Specific Column
+
+👀 select rollno, firstname, age from students;
+
+🤖 WHERE CLAUSES QUERY 🤖
+
+👾 The WHERE clause is used to filter records.
+
+👾 It is used to extract only those records that fulfill a specified condition.
+
+👀 select * from students where rollno=1;
+
+👀 select * from students where firstname= "john";
+
+🤖 WHERE CLAUSES OPERATORS QUERY 🤖
+
+ 👻 EQUAL
+
+ 👀 select * from students where rollno = 29;
+
+ 👻 GREATER THAN
+
+ 👀 select * from students where CGPA > 8.5;
+
+ 👻 LESS THAN
+
+ 👀 select * from students where CGPA < 8.5;
+
+ 👻 GREATER THAN OR EQUAL
+
+ 👀 select * from students where CGPA >= 8.5;
+
+ 👻 LESS THAN OR EQUAL
+
+ 👀 select * from students where CGPA <= 8.5;
+
+ 👻 NOT EQUAL TO
+
+ 👀 select * from students where age != 21;
+
+ 👻 BETWEEN
+
+ 👀 select * from students where cgpa between 7.5 and 8.5;
+
+ 👻 NOT BETWEEN
+
+ 👀 select * from students where cgpa not between 7.5 and 8.5;
+
+ 👻 IN
+
+ 👀 select * from students where cgpa in (8,5, 7,9, 9,2, 8.7);
+
+ 👻 NOT IN
+
+ 👀 select * from students where cgpa in (8,5, 7,9, 9,2, 8.7);
+
+ 👻 WILDCARD USING LIKE
+
+  👾 A wildcard character is used to substitute one or more characters in a string.
+
+  👾 Wildcard characters are used with the LIKE operator. 
+
+  👾 The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+
+  👾 %	Represents zero or more characters	bl% finds bl, black, blue, and blob
+
+  👾 _	Represents a single character	h_t finds hot, hat, and hit
+
+  👻 Finds any values that start with "a"
+
+  👀 select * from students where firstname LIKE 'a%'
+
+  👻 Finds any values that end with "a"
+
+  👀 select * from students where firstname LIKE '%a'
+
+  👻 Finds any values that have "or" in any position
+
+  👀 select * from students where firstname LIKE '%or%'
+
+  👻 Finds any values that have "r" in the second position
+
+  👀 select * from students where firstname LIKE '_r%'
+
+  👻 Finds any values that start with "a" and are at least 2 characters in length
+
+  👀 select * from students where firstname LIKE 'a_%'
+
+  👻 Finds any values that start with "a" and are at least 3 characters in length
+
+  👀 select * from students where firstname LIKE 'a__%'
+
+  👻 Finds any values that start with "a" and ends with "o"
+
+  👀 select * from students where firstname LIKE 'a%o'
+
+ 👻 WILDCARD USING NOT LIKE
+
+  👻 Finds any values that not start with "a"
+
+  👀 select * from students where firstname NOT LIKE 'a%'
+
+
+
+
+
+
+
+
+
+
