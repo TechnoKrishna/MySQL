@@ -1,0 +1,18 @@
+🤖 UPDATE & DELETE 🤖
+
+👾 The UPDATE statement is used to modify the existing records in a table.
+
+👀 update students set firstname = "krishna", cgpa = 9.7 where rollno = 1;
+
+👻 UPDATE Multiple Records
+
+👀 update students set cgpa = 8.6 where age = 21;
+
+👾 The DELETE statement is used to delete existing records in a table.
+
+👀 delete from students where rollno = 50;
+
+👻 Delete All Records
+
+👀 delete from students;
+
