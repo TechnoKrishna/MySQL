@@ -1,0 +1,28 @@
+🤖 AUTOCOMMIT, COMMIT, ROLLBACK 🤖
+
+👾 WHAT IF WE ACCIDENTALLY DELETE MY WHOLE ROWS TO BE SAFE.
+
+👾 WE SET AUTOCOMMIT OFF.
+
+👀 set autocommit = off;
+
+👀 commit;
+
+👀 delete from students;
+
+👾 NOW EVEN WE ACCIDENTALLY DELETE MY WHOLE ROWS IT CAN BE BRING BACK
+
+👀 rollback;
+
+👾 OUR TABLE IS BACK AGAIN
+
+👀 commit;
+
+👾 AFTER EACH CHANGES U NEED TO DO COMMIT MANUALLY 😟
+
+
+
+
+
+
+
