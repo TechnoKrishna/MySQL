@@ -1,0 +1,89 @@
+🤖 FOREIGN KEY 🤖
+
+👾 The FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.
+
+👾 A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
+
+👾 The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table.
+
+CREATE TABLE customers (
+    customer_id INT,
+    customer_name VARCHAR(100) NOT NULL,
+    customer_email VARCHAR(100) NOT NULL,
+    customer_phone VARCHAR(15) NOT NULL,
+    PRIMARY KEY (customer_id)
+);
+
+CREATE TABLE orders (
+    order_id INT,
+    order_date DATE,
+    amount DECIMAL(10, 2),
+    customer_id INT,
+    PRIMARY KEY (order_id),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+👾 To create a FOREIGN KEY constraint on the column when the "Orders" table is already created
+
+👀 ALTER TABLE Orders ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+👾 To drop a FOREIGN KEY constraint
+
+👀 ALTER TABLE Orders DROP FOREIGN KEY FK_PersonOrder;
+
+🧟 DUMMY DATA
+
+INSERT INTO customers (customer_id, customer_name, customer_email, customer_phone) VALUES
+(1, 'John Doe', 'john.doe@example.com', '123-456-7890'),
+(2, 'Jane Smith', 'jane.smith@example.com', '123-456-7891'),
+(3, 'Emily Johnson', 'emily.johnson@example.com', '123-456-7892'),
+(4, 'Michael Brown', 'michael.brown@example.com', '123-456-7893'),
+(5, 'Jessica Davis', 'jessica.davis@example.com', '123-456-7894'),
+(6, 'Daniel Wilson', 'daniel.wilson@example.com', '123-456-7895'),
+(7, 'Laura Taylor', 'laura.taylor@example.com', '123-456-7896'),
+(8, 'Matthew Thomas', 'matthew.thomas@example.com', '123-456-7897'),
+(9, 'Sarah Martinez', 'sarah.martinez@example.com', '123-456-7898'),
+(10, 'James Garcia', 'james.garcia@example.com', '123-456-7899');
+
+
+INSERT INTO orders (order_id, order_date, amount, customer_id) VALUES
+(1, '2024-07-01', 100.00, 1),
+(2, '2024-07-01', 200.00, 2),
+(3, '2024-07-02', 150.00, 3),
+(4, '2024-07-02', 250.00, 4),
+(5, '2024-07-03', 300.00, 5),
+(6, '2024-07-03', 350.00, 6),
+(7, '2024-07-04', 400.00, 7),
+(8, '2024-07-04', 450.00, 8),
+(9, '2024-07-05', 500.00, 9),
+(10, '2024-07-05', 550.00, 10),
+(11, '2024-07-06', 600.00, 1),
+(12, '2024-07-06', 650.00, 2),
+(13, '2024-07-07', 700.00, 3),
+(14, '2024-07-07', 750.00, 4),
+(15, '2024-07-08', 800.00, 5),
+(16, '2024-07-08', 850.00, 6),
+(17, '2024-07-09', 900.00, 7),
+(18, '2024-07-09', 950.00, 8),
+(19, '2024-07-10', 1000.00, 9),
+(20, '2024-07-10', 1050.00, 10),
+(21, '2024-07-11', 1100.00, 1),
+(22, '2024-07-11', 1150.00, 2),
+(23, '2024-07-12', 1200.00, 3),
+(24, '2024-07-12', 1250.00, 4),
+(25, '2024-07-13', 1300.00, 5),
+(26, '2024-07-13', 1350.00, 6),
+(27, '2024-07-14', 1400.00, 7),
+(28, '2024-07-14', 1450.00, 8),
+(29, '2024-07-15', 1500.00, 9),
+(30, '2024-07-15', 1550.00, 10),
+(31, '2024-07-16', 1600.00, 1),
+(32, '2024-07-16', 1650.00, 2),
+(33, '2024-07-17', 1700.00, 3),
+(34, '2024-07-17', 1750.00, 4),
+(35, '2024-07-18', 1800.00, 5),
+(36, '2024-07-18', 1850.00, 6),
+(37, '2024-07-19', 1900.00, 7),
+(38, '2024-07-19', 1950.00, 8),
+(39, '2024-07-20', 2000.00, 9),
+(40, '2024-07-20', 2050.00, 10);
