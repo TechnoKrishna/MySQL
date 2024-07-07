@@ -1,0 +1,30 @@
+🤖 JOINS 🤖
+
+👾 A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+👾 INNER JOIN: Returns records that have matching values in both tables
+
+SELECT c.customer_id, c.customer_name, c.customer_phone, o.order_date, o.amount FROM customers c INNER JOIN orders o ON c.customer_id = o.customer_id;
+
+👾 LEFT JOIN: Returns all records from the left table, and the matched records from the right table
+
+SELECT c.customer_id, c.customer_name, c.customer_phone, o.order_date, o.amount FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id;
+
+👾 RIGHT JOIN: Returns all records from the right table, and the matched records from the left table
+
+SELECT c.customer_id, c.customer_name, c.customer_phone, o.order_date, o.amount FROM customers c RIGHT JOIN orders o ON c.customer_id = o.customer_id;
+
+👾 CROSS JOIN: Returns all records from both tables
+
+👾 The CROSS JOIN keyword returns all matching records from both tables whether the other table matches or not. So, if there are rows in "Customers" that do not have matches in "Orders", or if there are rows in "Orders" that do not have matches in "Customers", those rows will be listed as well.
+
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+CROSS JOIN Orders;
+
+👾 If you add a WHERE clause (if table1 and table2 has a relationship), the CROSS JOIN will produce the same result as the INNER JOIN clause:
+
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+CROSS JOIN Orders
+WHERE Customers.CustomerID=Orders.CustomerID;
