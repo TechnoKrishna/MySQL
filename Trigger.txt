@@ -1,0 +1,46 @@
+🤖 TRIGGER 🤖
+
+👾 Triggers in MySQL are a powerful feature that allows you to automatically execute a specified set of SQL commands when certain events occur in your database tables. 
+
+👾 These events can be INSERT, UPDATE, or DELETE operations.
+
+🧟 SYNTAX
+
+CREATE TRIGGER trigger_name
+{BEFORE | AFTER} {INSERT | UPDATE | DELETE}
+ON table_name FOR EACH ROW
+BEGIN
+    -- SQL statements
+END;
+
+👾 BEFORE Triggers: These triggers are executed before the triggering statement (INSERT, UPDATE, DELETE) is performed.
+
+👾 AFTER Triggers: These triggers are executed after the triggering statement is performed.
+
+CREATE TABLE orders (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    order_date DATETIME,
+    amount DECIMAL(10, 2)
+);
+
+CREATE TABLE order_audit (
+    audit_id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT,
+    customer_id INT,
+    order_date DATETIME,
+    amount DECIMAL(10, 2),
+    action VARCHAR(10),
+    action_time DATETIME
+);
+
+use shop;
+DELIMITER //
+CREATE TRIGGER after_order_insert
+AFTER INSERT ON orders
+FOR EACH ROW
+BEGIN
+    INSERT INTO order_audit (order_id, customer_id, order_date, amount, action, action_time)
+    VALUES (NEW.order_id, NEW.customer_id, NEW.order_date, NEW.amount, 'INSERT', NOW());
+END;
+//
