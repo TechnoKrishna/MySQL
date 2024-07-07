@@ -1,0 +1,30 @@
+🤖 VIEW 🤖
+
+👾 In SQL, a view is a virtual table based on the result-set of an SQL statement.
+
+👾 A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
+
+👾 You can add SQL statements and functions to a view and present the data as if the data were coming from one single table.
+
+👻 CREATE VIEW
+
+CREATE VIEW all_people AS
+SELECT name, city FROM customers
+UNION
+SELECT name, city FROM suppliers;
+
+👾 you can query the view just like a regular table.
+
+SELECT * FROM all_people;
+
+👻 UPDATE VIEW
+
+CREATE OR REPLACE VIEW all_people AS
+SELECT name, city FROM customers
+UNION ALL
+SELECT name, city FROM suppliers;
+
+👻 DELETE VIEW
+
+DROP VIEW all_people;
+
