@@ -31,6 +31,32 @@ CREATE TABLE orders (
 
 👀 ALTER TABLE Orders DROP FOREIGN KEY FK_PersonOrder;
 
+⚠️ ON DELETE
+
+👾 ON DELETE SET NULL = WHEN A FOREIGN KEY IS DELETED, REPLACE FOREIGN KEY WITH NULL 
+
+CREATE TABLE orders (
+    order_id INT,
+    order_date DATE,
+    amount DECIMAL(10, 2),
+    customer_id INT,
+    PRIMARY KEY (order_id),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+    ON DELETE SET NULL
+);
+
+👾 ON DELETE CASCADE = WHEN A FOREIGN KEY IS DELETED, DELETE ROW
+
+CREATE TABLE orders (
+    order_id INT,
+    order_date DATE,
+    amount DECIMAL(10, 2),
+    customer_id INT,
+    PRIMARY KEY (order_id),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+    ON DELETE CASCADE
+);
+
 🧟 DUMMY DATA
 
 INSERT INTO customers (customer_id, customer_name, customer_email, customer_phone) VALUES
