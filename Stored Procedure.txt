@@ -1,0 +1,66 @@
+ 🤖 STORED PROCEDURES 🤖
+
+👾 Stored Procedures in MySQL are a set of SQL statements that can be stored in the database and executed as a single unit. 
+
+👾 They can accept parameters, execute SQL statements, and return values. 
+
+👾 Stored procedures are useful for encapsulating business logic, improving performance, and reusing code.
+
+👻 CREATE SIMPLE STORED PROCEDURE
+
+DELIMITER //
+
+CREATE PROCEDURE GetGreeting()
+BEGIN
+    SELECT 'Hello, World!';
+END //
+
+DELIMITER ;
+
+👾 To call this procedure
+
+CALL GetGreeting();
+
+👻 CREATE STORED PROCEDURE WITH INPUT PARAMETERS
+
+DELIMITER //
+
+CREATE PROCEDURE GetCustomerDetails(IN customerId INT)
+BEGIN
+    SELECT * FROM Customers WHERE CustomerID = customerId;
+END //
+
+DELIMITER ;
+
+----
+
+DELIMITER //
+
+CREATE PROCEDURE GetCustomerDetails(IN name varchar(50))
+BEGIN
+    SELECT * FROM customers WHERE name = name;
+END //
+
+DELIMITER ;
+
+👾 To call this procedure
+
+CALL GetCustomerDetails(1);
+
+CALL GetCustomerDetails("Alice");
+
+👻 UPDATE PROCEDURE
+
+DELIMITER //
+DROP PROCEDURE IF EXISTS GetCustomerDetails;
+CREATE PROCEDURE GetCustomerDetails()
+BEGIN
+  SELECT * FROM customers where city = "Los Angeles";
+END //
+DELIMITER ;
+
+👻 DROP PROCEDURE
+
+DROP PROCEDURE IF EXISTS GetCustomerDetails;
+
+
