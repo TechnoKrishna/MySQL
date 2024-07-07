@@ -1,0 +1,43 @@
+🤖 UNION 🤖
+
+👾 The UNION operator is used to combine the result-set of two or more SELECT statements.
+
+👾 Every SELECT statement within UNION must have the same number of columns
+
+👾 The columns must also have similar data types
+
+👾 The columns in every SELECT statement must also be in the same order
+
+CREATE TABLE customers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    city VARCHAR(100)
+);
+
+CREATE TABLE suppliers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    city VARCHAR(100)
+);
+
+INSERT INTO customers (name, city) VALUES ('Alice', 'New York');
+INSERT INTO customers (name, city) VALUES ('Bob', 'Los Angeles');
+INSERT INTO customers (name, city) VALUES ('Charlie', 'Chicago');
+INSERT INTO customers (name, city) VALUES ('Alice', 'New York');
+
+INSERT INTO suppliers (name, city) VALUES ('Delta Supplies', 'Houston');
+INSERT INTO suppliers (name, city) VALUES ('Echo Supplies', 'Phoenix');
+INSERT INTO suppliers (name, city) VALUES ('Charlie', 'Chicago');
+INSERT INTO suppliers (name, city) VALUES ('Foxtrot Supplies', 'San Diego');
+
+SELECT name, city FROM customers
+UNION
+SELECT name, city FROM suppliers;
+
+👻 UNION ALL
+
+👾 The UNION operator selects only distinct values by default. To allow duplicate values, use UNION ALL
+
+SELECT name, city FROM customers
+UNION ALL
+SELECT name, city FROM suppliers;
