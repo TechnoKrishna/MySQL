@@ -1,0 +1,65 @@
+🤖 SUB QUERIES 🤖
+
+👾 Subqueries in MySQL are queries nested inside another query. 
+
+👾 They can be used in various clauses such as SELECT, INSERT, UPDATE, DELETE, and even in clauses like WHERE, FROM, and HAVING. 
+
+👾 Subqueries can return a single value, a single row, or a table of results, and are a powerful tool for complex data retrieval operations.
+
+CREATE TABLE customers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    city VARCHAR(100)
+);
+
+INSERT INTO customers (name, city) VALUES ('Alice', 'New York');
+INSERT INTO customers (name, city) VALUES ('Bob', 'Los Angeles');
+INSERT INTO customers (name, city) VALUES ('Charlie', 'Chicago');
+
+
+CREATE TABLE orders (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    amount DECIMAL(10, 2),
+    FOREIGN KEY (customer_id) REFERENCES customers(id)
+);
+
+INSERT INTO orders (customer_id, order_date, amount) VALUES (1, '2024-01-01', 100.00);
+INSERT INTO orders (customer_id, order_date, amount) VALUES (1, '2024-01-10', 150.00);
+INSERT INTO orders (customer_id, order_date, amount) VALUES (2, '2024-01-15', 200.00);
+INSERT INTO orders (customer_id, order_date, amount) VALUES (3, '2024-01-20', 250.00);
+
+👻 Single-Row Subqueries: Return a single row.
+
+👾 Find customers who have placed an order greater than $100.
+
+👀 SELECT name FROM customers WHERE id = (SELECT customer_id FROM orders WHERE amount > 100 LIMIT 1);
+
+👻 Multiple-Row Subqueries: Return multiple rows.
+
+👾 Find all customers who have placed an order.
+
+👀 SELECT name FROM customers WHERE id IN (SELECT customer_id FROM orders);
+
+👻 Multiple-Column Subqueries: Return multiple columns.
+
+👾 Find orders with the highest amount for each customer.
+
+SELECT customer_id, order_date, amount
+FROM orders
+WHERE (customer_id, amount) IN (
+    SELECT customer_id, MAX(amount)
+    FROM orders
+    GROUP BY customer_id
+);
+
+👻 Correlated Subqueries: Reference columns from the outer query.
+
+👾 Find customers who have placed more than one order.
+
+SELECT name FROM customers c WHERE EXISTS (
+    SELECT 1 FROM orders o WHERE o.customer_id = c.id GROUP BY o.customer_id HAVING COUNT(o.order_id) > 1
+);
+
+
