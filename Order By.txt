@@ -25,3 +25,13 @@
 👀 select * from students order by cgpa desc, age asc;
 
 👀 select * from students order by cgpa desc, age desc;
+
+👻 ROLLUP
+
+👾 ROLLUP, Extenstion of the GROUP BY clause
+
+👾 produces another row and shows the GRAND TOTAL (Super Aggregate Value)
+
+👀 select SUM(amount), order_date from transactions group by oder_date with rollup;
+
+👀 select count(transaction_id), order_date from transactions group by oder_date with rollup;
