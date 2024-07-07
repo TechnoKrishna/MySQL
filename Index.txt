@@ -1,0 +1,29 @@
+🤖 Index 🤖
+
+👾 Indexes are used to retrieve data from the database more quickly than otherwise. 
+
+👾 The users cannot see the indexes, they are just used to speed up searches/queries.
+
+👻 SINGLE COLUMN INDEX
+
+👀 CREATE INDEX idx_city ON customers(city);
+
+👻 COMPOSITE INDEX
+
+👀 CREATE INDEX idx_name_city ON customers(name, city);
+
+👻 UNIQUE INDEX
+
+👀 CREATE UNIQUE INDEX idx_email ON customers(email);
+
+👾 Indexes are used automatically by MySQL when executing queries
+
+👀 SELECT * FROM customers WHERE city = 'New York';
+
+👾 Viewing Indexes
+
+👀 SHOW INDEX FROM customers;
+
+👾 Dropping Indexes
+
+👀 DROP INDEX idx_city ON customers;
